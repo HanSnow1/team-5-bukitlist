@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내 버킷리스트 카드</title>
+    <style>
+        /* 기본 카드 디자인 (자유롭게 수정 가능) */
+        .card1 {
+            width: 300px;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%);
+            padding: 15px 15px 35px 15px;
+            border-radius: 2px 2px 15px 5px;
+            transform: rotate(5deg);
+            box-shadow: 3px 5px 15px rgba(0,0,0,0.15);
+            /* 배지의 기준점이 되기 위한 필수 속성 */
+            position: relative; 
+            transition: transform 0.2s ease;
+        }
+        .card1 img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+        .card1 h2 { color: #2c3e50; font-size: 1.5rem; margin-bottom: 10px; }
+        .card1 p { color: #444; font-size: 1.1rem; line-height: 1.5; }
+                .memo1-2 {
+            color: rgba(0, 0, 0, 0.3) !important;
+            font-size: 14px !important;
+        }
+        .memo1 {
+            color: rgba(255, 0, 0, 0.7) !important;
+            font-size: 14px !important;
+        }
+        /* 1. 배지 (absolute) 관련 CSS를 작성하세요 */
+        .badge1 {
+    display: inline-block;
+    background: #160047;
+    color: white;
+    width: 50px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 999px;
+    white-space: nowrap;
+    position: absolute;
+    top: 0px;
+    left: 270px;
+    
+    transform: rotate(10deg); /* 기울이기 */
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+
+    font-size: 14px;
+
+        }
+        
+
+        /* 2. 비밀 메모 (visibility) 및 hover 효과 관련 CSS를 작성하세요 */
+        .memo1 {
+    visibility: hidden;
+}
+        .memo1-2 {
+    visibility: hidden;
+}
+
+.card1:hover .memo1 {
+    visibility: visible;
+}
+
+.card1:hover .memo1-2 {
+    visibility: visible;
+}
+
+.card1:hover {
+            transform: scale(1.05) rotate(0deg);
+            z-index: 10;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+    <div class="card1">
+        <img src="https://cdn.pixabay.com/photo/2020/11/22/19/19/louvre-5767708_1280.jpg" alt="루브르 박물관">
+        
+        <h2>✨ 지현의 꿈</h2>
+        <p>🎮 1. 첫 게임 직접 만들어 보기</p>
+        <p>🏛️ 2. 루브르 박물관 원정 여행</p>
+        <p class="memo1-2">---------------------------------------<br></p>
+        <p class="memo1">🤫 TMI: 게임 엔진은 초보</p>
+
+    <div class="badge1">Pick!🎯</div>
+
+        </div>
+    </body>
+</html>
