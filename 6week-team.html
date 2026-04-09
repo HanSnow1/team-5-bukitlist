@@ -5,6 +5,7 @@
     <title>우리 조 버킷리스트 아트 월</title>
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
     <style>
+        /* [메인 스타일] 6week-team (1).html 기반 */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: 'Nanum Pen Script', cursive;
@@ -27,26 +28,76 @@
         }
         h1 { color: #333; font-size: 2.8rem; margin-bottom: 10px; }
         .clearfix::after { content: ""; display: block; clear: both; }
-        .gallery-container { width: 90%; max-width: 1200px; margin: 0 auto; }
+        .gallery-container { width: 95%; max-width: 1200px; margin: 0 auto; }
         
-        /* 공통 카드 스타일 */
-        .card {
-            float: left; width: 31.33%; margin: 1%;
-            background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%);
+        /* 공통 카드 레이아웃 (세환님 500px 문제 해결) */
+        .member-card {
+            float: left;
+            width: 31.33%; /* 3열 배치로 고정 */
+            margin: 1%;
+            min-height: 480px;
             padding: 15px 15px 35px 15px;
             border-radius: 2px 2px 15px 5px;
             box-shadow: 3px 5px 15px rgba(0,0,0,0.15);
-            position: relative; /* 자식인 badge의 기준점 */
-            transform: rotate(-3deg);
+            position: relative;
             transition: transform 0.3s ease, z-index 0s;
         }
-        .card:hover {
-            transform: scale(1.05) rotate(0deg);
+        .member-card:hover {
+            transform: scale(1.05) rotate(0deg) !important;
             z-index: 10;
         }
-        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
-        .card h2 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 10px; }
-        .card p { color: #444; font-size: 1.3rem; text-align: left; line-height: 1.5; }
+        .member-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+
+        /* 1. 박은재 스타일 */
+        .card-eunjae { background: linear-gradient(135deg, #2d3436 0%, #636e72 100%); transform: rotate(-2deg); }
+        .card-eunjae h2 { color: #dfe6e9; font-size: 1.8rem; }
+        .card-eunjae p { color: #b2bec3; font-size: 1.3rem; text-align: left; }
+        .card-eunjae .badge { position: absolute; top: -15px; right: -15px; background-color: #54a0ff; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+        .card-eunjae .secret-memo { visibility: hidden; background-color: #a29bfe; padding: 10px; margin-top: 20px; border-radius: 5px; color: #2d3436; border: 1px dashed #b2bec3; }
+        .card-eunjae:hover .secret-memo { visibility: visible; }
+
+        /* 2. 이진서 스타일 */
+        .card-jinseo { background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%); transform: rotate(2deg); }
+        .card-jinseo h2 { color: #2c3e50; font-size: 1.8rem; }
+        .card-jinseo p { color: #444; font-size: 1.3rem; text-align: left; }
+        .card-jinseo .badge { position: absolute; top: -5px; right: -5px; background-color: #ff4757; color: white; padding: 5px 12px; border-radius: 50px; transform: rotate(10deg); z-index: 10; }
+        .card-jinseo .secret-tmi { margin-top: 15px; padding: 10px; background-color: #fef5d4; border: 1px dashed #e67e22; color: #d35400; visibility: hidden; }
+        .card-jinseo:hover .secret-tmi { visibility: visible; }
+
+        /* 3. 현선 스타일 */
+        .card-hyunsun { background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%); transform: rotate(-1deg); }
+        .card-hyunsun h2 { color: #2c3e50; font-size: 1.8rem; }
+        .card-hyunsun p { color: #534e4e; font-size: 1.3rem; text-align: left; }
+        .card-hyunsun .badge2 { position: absolute; top: 10px; right: 10px; background-color: #ff4757; color: white; padding: 5px 10px; border-radius: 20px; font-size: 1rem; }
+        .card-hyunsun .secret2 { visibility: hidden; background-color: rgba(0,0,0,0.7); color: white; padding: 8px; border-radius: 5px; margin-top: 15px; }
+        .card-hyunsun:hover .secret2 { visibility: visible; }
+
+        /* 4. 지현 스타일 */
+        .card-jihyun { background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%); transform: rotate(3deg); }
+        .card-jihyun h2 { color: #2c3e50; font-size: 1.8rem; }
+        .card-jihyun p { color: #444; font-size: 1.3rem; text-align: left; }
+        .card-jihyun .badge1 { position: absolute; top: 0px; right: -10px; background: #160047; color: white; padding: 8px 16px; border-radius: 999px; transform: rotate(10deg); }
+        .card-jihyun .memo1 { visibility: hidden; color: rgba(255, 0, 0, 0.7); font-size: 1.2rem; margin-top: 10px; }
+        .card-jihyun:hover .memo1 { visibility: visible; }
+
+        /* 5. 김세환 스타일 (분리 현상 수정 버전) */
+        .card-sewhan { 
+            background: linear-gradient(135deg, #709e59 0%, #264219 100%); 
+            transform: rotate(-3deg); 
+        }
+        .card-sewhan h2 { color: #ffffff; font-size: 1.8rem; }
+        .card-sewhan p { color: #ffffff; font-size: 1.3rem; text-align: left; }
+        .card-sewhan .card-badge { 
+            position: absolute; top: -10px; left: -10px; background-color: #ef5350; 
+            color: white; padding: 8px 15px; border-radius: 30px; font-weight: bold; z-index: 10; 
+        }
+        .card-sewhan .secret-memo { 
+            margin-top: 20px; padding: 10px; background-color: rgba(255, 255, 255, 0.2); 
+            border: 1px dashed white; color: #ffeb3b; visibility: hidden; 
+            opacity: 0; transition: opacity 0.3s linear; 
+        }
+        .card-sewhan:hover .secret-memo { visibility: visible; opacity: 1; }
+
     </style>
 </head>
 <body>
@@ -54,8 +105,54 @@
         <h1>🏖️ 2026 버킷리스트 아트 월 🏖️</h1>
         <p style="font-size: 1.5rem; color: #555;">우리 조의 꿈들을 코르크 보드에 붙였습니다!</p>
     </header>
+
     <main class="gallery-container clearfix">
-        <!-- 팀원들의 코드가 들어갈 자리입니다 -->
+        
+        <div class="member-card card-eunjae">
+            <div class="badge">2026</div>
+            <img src="https://i.pinimg.com/736x/59/21/a0/5921a06d24ae6f23ceaf43eeab9866bc.jpg" alt="박은재">
+            <h2>박은재의 버킷리스트</h2>
+            <p>🗻 1. 일본 여행 가보기</p>
+            <p>✔️ 2. 내가 하고자 하는 뚜렷한 목표 정하기</p>
+            <div class="secret-memo">이젠 좀 행동으로 보여주자🔥</div>
+        </div>
+
+        <div class="member-card card-jinseo">
+            <div class="badge">Pick! 🎯</div>
+            <img src="https://i.namu.wiki/i/l5bE4F6O7yVYV_ZQ8ClrynbNlyvblKZepcjQQWyOHVOt4cPjVg8XisBg8V9y5kFgqDeMScyR58WY8qJknyAnvA.webp" alt="이진서">
+            <h2>✨ 이진서의 2026 꿈</h2>
+            <p>🌊 1. 오버워치 티어 올리기</p>
+            <p>💻 2. 친구들과 동남아 여행 가기</p>
+            <p>🎮 3. 노량진 수산시장 가서 회먹기</p>
+            <div class="secret-tmi">🤫 1학기 성적 망한거 같아용</div>
+        </div>
+
+        <div class="member-card card-hyunsun">
+            <div class="badge2">멋진 나의 꿈</div>
+            <img src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2023/03/04/c9a716ed-2a4b-45fe-b66b-7841ee989dff.jpg" alt="현선">
+            <h2>현선이의 꿈</h2>
+            <p> 1. 해외여행 다니면서 친구들 사귀기 </p>
+            <p> 2. 몸짱되기</p>
+            <div class="secret2">사실 내향형이라서 사람들에게 말을 잘 못 검</div>
+        </div>
+
+        <div class="member-card card-jihyun">
+            <img src="https://cdn.pixabay.com/photo/2020/11/22/19/19/louvre-5767708_1280.jpg" alt="지현">
+            <h2>✨ 지현의 꿈</h2>
+            <p>🎮 1. 첫 게임 직접 만들어 보기</p>
+            <p>🏛️ 2. 루브르 박물관 원정 여행</p>
+            <div class="memo1">🤫 TMI: 게임 엔진은 초보</div>
+            <div class="badge1">Pick!🎯</div>
+        </div>
+
+        <div class="member-card card-sewhan">
+            <div class="card-badge">🤔DREAM</div>
+            <img src="https://images.unsplash.com/photo-1593672755342-741a7f868732?auto=format&fit=crop&q=80&w=1000" alt="김세환">
+            <h2>✨ 김세환의 꿈 ✨</h2>
+            <p>💸 부자 되기 💸</p>
+            <p>🖥️ 안정적인 직장얻기 🖥️</p>
+            <div class="secret-memo">R=VD의 법칙! 꿈을 간절하게 꾸면 이루어진다!🚀</div>
+        </div>
 
     </main>
 </body>
