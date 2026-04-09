@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내 버킷리스트 카드</title>
+    <style>
+        /* 기본 카드 디자인 (자유롭게 수정 가능) */
+        .card {
+            width: 500px;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #709e59 0%, #264219 100%);
+            padding: 15px 15px 35px 15px;
+            border-radius: 2px 2px 15px 5px;
+            box-shadow: 3px 5px 15px rgba(0,0,0,0.15);
+            /* 배지의 기준점이 되기 위한 필수 속성 */
+            position: relative; 
+            overflow: visible;
+        }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; margin-bottom: 15px; }
+        .card h2 { color: #ffffff; font-size: 1.5rem; margin-bottom: 10px; }
+        .card p { color: #ffffff; font-size: 1.1rem; line-height: 1.5; }
+
+        /* 1. 배지 (absolute) 관련 CSS를 작성하세요 */
+        .card-badge {
+            position: absolute;
+            top: -10px;    
+            left: -10px;   
+            background-color: #ef5350; 
+            color: white;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            z-index: 10; 
+        }
+
+        /* 2. 비밀 메모 (visibility) 및 hover 효과 관련 CSS를 작성하세요 */
+        .secret-memo {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.2); 
+            border: 1px dashed white;
+            border-radius: 8px;
+            color: #ffeb3b; 
+            font-weight: bold;
+            text-align: center;
+            
+          
+            visibility: hidden; 
+            transition: visibility 0s, opacity 0.3s linear; 
+            opacity: 0;
+        }
+
+       
+        .card:hover .secret-memo {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="card-badge">🤔DREAM</div>
+        <img src = "https://images.unsplash.com/photo-1593672755342-741a7f868732?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUVCJThGJTg4JTIwJUVCJUIwJUIwJUVBJUIyJUJEfGVufDB8fDB8fHww" alt="돈 배경화면">
+        
+        <h2>✨ 김세환의 꿈 ✨</h2>
+        <p>💸 부자 되기 💸</p>
+        <p>🖥️ 안정적인 직장얻기 🖥️</p>
+        
+        <div class="secret-memo">
+            R=VD의 법칙 꿈을 간걸하게 꾸면 이루어 진다!🚀
+        </div>
+        
+        </div>
+    </body>
+</html>
