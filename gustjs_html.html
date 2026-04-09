@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>내 버킷리스트 카드</title>
+    <style>
+        body 
+
+        .card2 {
+            width: 300px;
+            margin: 50px auto;
+            background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%);
+            padding: 15px 15px 50px 15px;
+            border-radius: 10px;
+            box-shadow: 3px 5px 15px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+
+        .card2 img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .card2 h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card2 p {
+            color: #534e4e;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        
+        .badge2 {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff4757;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        
+        .secret2 {
+            visibility: hidden;
+            position: absolute;
+            bottom: 10px;
+            left: 15px;
+            right: 15px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .card2:hover .secret {
+            visibility: visible;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="card2">
+        <div class="badge2">멋진 나의 꿈</div>
+
+        <img src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2023/03/04/c9a716ed-2a4b-45fe-b66b-7841ee989dff.jpg" alt="세계 여행">
+        
+        <h2>현선이의 꿈</h2>
+        <p> 1.해외여행 다니면서 친구들 사귀기 </p>
+        <p> 2.몸짱되기</p>
+
+        <div class="secret2">사실 내향형이라서 사람들에게 말을 잘 못 검</div>
+    </div>
+
+</body>
+</html>
