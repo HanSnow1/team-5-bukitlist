@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>내 버킷리스트 카드</title>
+    <style>
+        body {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            width: 300px;
+            background: linear-gradient(135deg, #2d3436 0%, #636e72 100%);
+            padding: 15px 15px 35px 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            color: #dfe6e9;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #b2bec3;
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin: 8px 0;
+        }
+
+        .badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: #54a0ff;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .secret-memo {
+            visibility: hidden;
+            background-color: #a29bfe;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-align: center;
+            color: #2d3436;
+            font-size: 0.95rem;
+            border: 1px dashed #b2bec3;
+        }
+
+        .card:hover .secret-memo {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <div class="badge">2026</div>
+
+        <img src="https://i.pinimg.com/736x/59/21/a0/5921a06d24ae6f23ceaf43eeab9866bc.jpg" alt="내 버킷리스트 이미지">
+
+        <h2>박은재의 버킷리스트</h2>
+        <p>🗻1. 일본 여행 가보기</p>
+        <p>✔️2. 내가 하고자 하는 뚜렷한 목표 정하기</p>
+
+        <div class="secret-memo">
+            이젠 좀 행동으로 보여주자🔥
+        </div>
+    </div>
+
+</body>
+
+</html>
