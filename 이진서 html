@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html lang="ko"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>내 버킷리스트 카드</title> 
+    <style> 
+        /* 기본 카드 디자인 (자유롭게 수정 가능) */ 
+        .card { 
+            width: 300px; 
+            margin: 50px auto; 
+            background: linear-gradient(135deg, #fffcf0 0%, #fff3b0 100%); 
+            padding: 15px 15px 35px 15px; 
+            border-radius: 2px 2px 15px 5px; 
+            box-shadow: 3px 5px 15px rgba(0,0,0,0.15); 
+            /* 배지의 기준점이 되기 위한 필수 속성 */ 
+            position: relative;  
+            /* 움직임을 부드럽게 만들기 위해 추가 */ 
+            transition: all 0.3s ease; 
+        } 
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 5px; 
+margin-bottom: 15px; } 
+        .card h2 { color: #2c3e50; font-size: 1.2rem; margin-bottom: 10px; } 
+        .card p { color: #444; font-size: 1rem; line-height: 1.5; margin: 5px 0; } 
+        /* 1. 배지 (absolute) 관련 CSS를 작성하세요 */ 
+        .badge { 
+            position: absolute;  
+            top: -10px; 
+            right: -10px; 
+            background-color: #ff4757; 
+            color: white; 
+            padding: 8px 12px; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            font-size: 14px; 
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+            transform: rotate(15deg); 
+            z-index: 10; 
+        } 
+        /* 2. 비밀 메모 (visibility) 및 hover 효과 관련 CSS를 작성하세요 */ 
+        .secret-tmi {
+            margin-top: 15px; 
+            background-color: rgba(255, 255, 255, 0.5); 
+            padding: 10px; 
+            border-radius: 5px; 
+            font-size: 0.9rem; 
+            color: #d35400; 
+            border: 1px dashed #e67e22; 
+            visibility: hidden; 
+        } 
+        .card:hover {
+            border: 2px solid #f1c40f; 
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
+        } 
+        .card:hover .secret-tmi { 
+            visibility: visible; 
+        } 
+
+        .card { 
+    /* 기존에 있던 코드들... (background, padding 등) */ 
+    position: relative; 
+    transition: all 0.3s ease; /* 모든 변화(그림자, 이동 등)를 0.3초 동안 부드럽게! */ 
+} 
+/* 2. 마우스를 올렸을 때의 변화 */ 
+.card:hover { 
+    transform: translateY(-10px); /* 위로 이동 */ 
+    box-shadow: 0 10px 20px rgb(68, 21, 19); /* 그림자 진하게 */ 
+} 
+.badge { 
+    position: absolute;  
+    top: -5px;       
+    right: -5px;     
+    background-color: #ff4757;  
+    color: white; 
+    padding: 5px 12px; 
+    font-weight: bold; 
+    border-radius: 50px; 
+    font-size: 13px; 
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); 
+    transform: rotate(10deg);  
+    z-index: 10; 
+} 
+.secret-memo { 
+    margin-top: 15px; 
+    padding: 10px; 
+    background-color: #fef5d4;  
+    border: 1px dashed #e67e22;  
+    font-size: 0.85rem; 
+    color: #d35400; 
+    border-radius: 5px; 
+    visibility: hidden;  
+} 
+.card:hover .secret-memo { 
+    visibility: visible;
+}
+    </style> 
+</head> 
+<body> 
+    <div class="card"> 
+        <div class="badge">Pick! 🎯</div> 
+        <img 
+src="https://i.namu.wiki/i/l5bE4F6O7yVYV_ZQ8ClrynbNlyvblKZepcjQQWyOHVOt4cPjVg8XisBg8V9
+y5kFgqDeMScyR58WY8qJknyAnvA.webp" alt="나의 꿈 이미지"> 
+        <h2>✨ 나의 2026 꿈</h2> 
+        <p>🌊 1. 오버워치 티어 올리기</p> 
+        <p>💻 2. 친구들과 동남아 여행 가기</p> 
+        <p>🎮 3. 노량진 수산시장 가서 회먹기</p> 
+        <div class="secret-tmi"> 
+            🤫 1학기 성적 망한거 같아용 
+        </div> 
+    </div> 
+</body> 
+</html>
+
+          
