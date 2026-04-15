@@ -1,0 +1,16 @@
+            <!-- 팀원 아이템 시작 (주의: id 값은 팀원마다 고유하게 변경하세요) -->
+            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="pigfoot">
+                <img src="./images/족발.png" alt="족발">
+                <div class="item-name">족발</div>
+            </div>
+            
+            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="fish">
+                <img src="./images/회.png" alt="회">
+                <div class="item-na회e">회</div>
+            </div>
+            
+            <div class="item" draggable="true" ondragstart="drag(event)" onmouseover="showPreview(this)" id="chfoot">
+                <img src="./images/닭발.png" alt="닭발">
+                <div class="item-name">닭발</div>
+            </div>
+            
